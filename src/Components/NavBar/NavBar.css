@@ -1,0 +1,47 @@
+.Nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Logo{
+    width: 100px;
+    height: 100px;
+}
+.LogoTitulo{
+    text-align: center;
+}
+.menu{
+    
+    text-align: center;
+    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: flex-end;
+    margin: 50px;
+
+}
+
+a{
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    text-decoration: none;
+
+}
+.cartWidget{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: flex-end;
+    margin: 50px;
+}
+
