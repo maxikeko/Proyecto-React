@@ -19,9 +19,7 @@ function NavBar() {
         <li>
           <Link to="/">Inicio</Link>
         </li>
-        <li>
-          <Link to="/">Productos</Link>
-        </li>
+        
         <li>
           <Link to="/category/Motherboard">Motherboard</Link>
         </li>
@@ -31,11 +29,19 @@ function NavBar() {
         <li>
           <Link to="/category/Ram">Ram</Link>
         </li>
+
+        
+        <li>
+          <Link to="/checkout">checkout</Link>
+        </li>
       </div>
 
-      <div className="CardWidget">
+     <div>
+    
         <CartWidget />
-      </div>
+        <Link to="/Cart">Cart</Link>
+     </div>
+    
     </nav>
   );
 }

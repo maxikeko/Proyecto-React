@@ -2,22 +2,37 @@ import React from 'react'
 import FlexWrapper from '../FlexWrapper/FlexWrapper'
 import "./ItemDetail.css";
 import Button from '../Button/Button';
-function ItemDetail(props) {
+import ItemCount from '../ItemCount/ItemCount';
+function ItemDetail({product}) {
+ 
+
+
   return (
     <div>
-        <FlexWrapper>
+      <FlexWrapper>
+        <div className="mainDetail">
+          <div className="card-img">
+            <img src={product.img} alt={product.name}></img>
+          </div>
+          <div className="detail-items">
+            <h2>{product.name}</h2>
 
-        <div className='mainDetail'>
-        <h2>{props.title}</h2>
-        <img className='tamañoImagen' src={props.img} alt="" />  
-        <p>{props.detail}</p>
-        <h3>$ {props.price}</h3>  
-        <Button>{`Comprar`}</Button>
-        </div>    
             
-        </FlexWrapper>        
+            <p>Detalle: {product.detail}</p>
+            <p>Stock: {product.stock}</p>
+
+            <h4>$ {product.price}</h4>
+          </div>
+
+          <ItemCount product={product}/>
+
+          
+
+
+        </div>
+      </FlexWrapper>
     </div>
-  )
+  );
 }
 
 export default ItemDetail

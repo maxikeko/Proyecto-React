@@ -1,29 +1,37 @@
 
-import {getUnProducto} from "../mockAPI/mockAPI";
 import React, { useState, useEffect } from "react";
-import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom";
+import {doc, getDoc,getFirestore} from "firebase/firestore";
+import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer(props) {
-  const [unProducto, setUnProducto] = useState([]);
-  
-  const { id } = useParams();
 
+  // utilizacion de useState 
+  const [product , setProduct ] =useState({});
+  const {id}= useParams();
+  
 
   useEffect(() => {
-    getUnProducto(id).then((data) => setUnProducto(data));
+    const db = getFirestore();
+    const refDoc= doc(db,"products",id);
+    getDoc(refDoc).then((item)=>{
+      const aux ={
+        ...item.data() , id: item.id
+      }
+
+     
+      setProduct(aux);
+
+  })
+    
+
   }, [id]);
 
+  
+  
+
   return (
-    <>
-      <ItemDetail
-              key={unProducto.id}
-              title={unProducto.title}
-              img={unProducto.img}
-              price={unProducto.price}
-              detail={unProducto.detail}
-            />
-    </>
+    <ItemDetail product={product}/>
   );
 }
 

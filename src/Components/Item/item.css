@@ -2,11 +2,13 @@
     width: 280px;
     height: 260px;
     object-fit: cover;
+    padding: 1px;
   }
   .card-img img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+    padding: 1px;
   }
   .card{
     margin: 10px 15px;
@@ -19,6 +21,9 @@
     overflow: hidden;  
     transition: all 0.20s ease-in;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   
   .card:hover{
@@ -33,3 +38,4 @@
   small{
     color: #8c8c8e;
   }
+  

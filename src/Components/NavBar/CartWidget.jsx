@@ -1,12 +1,13 @@
-
+import { useContext } from "react"
+import { cartContext } from "../../CartContext/CartContextComponent"
 
 function CartWidget() {
+
+  const {totalCount} = useContext(cartContext);
+
   return (
     <div>
-        <a href="#">
-            <img className="cartWidget" src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="" />
-        </a>
-        
+        🛒{totalCount}
     </div>
   )
 }

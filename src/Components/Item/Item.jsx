@@ -1,22 +1,26 @@
 import "./item.css";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
-export default function Item(props) {
+export default function Item({product}) {
   return (
     <>
+      
       <div className="card">
+      <Link to={`/producto/${product.id}`}>
         <div className="card-img">
-          <img src={props.img} alt=""></img>
+          <img src={product.img} alt={product.name}></img>
         </div>
         <div className="card-detail">
-          <h2>{props.title}</h2>
+          <h2>{product.name}</h2>
           
-          <h4>$ {props.price}</h4>
+          <h4>$ {product.price}</h4>
         </div>
-
-        <Link to={`/producto/${props.id}`}>
-          <Button>Comprar</Button>
-        </Link>
+        
+        
+          <Button style={{cursor: "pointer"}}>Comprar</Button>
+      </Link>
+        
+        
       </div>
     </>
   );

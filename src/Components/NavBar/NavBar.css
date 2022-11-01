@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: rgb(181, 226, 255);
+    align-items: baseline;
     height: 160px;
 }
 .Logo{
@@ -13,7 +14,7 @@
 }
 .menu{
     
-    text-align: center;
+    text-align:center;
     
     
     display: flex;
@@ -32,18 +33,5 @@ a{
     text-decoration: none;
 
 }
-.cartWidget{
-    display: flex;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    align-items: flex-end;
-    margin: 50px;
-}
 
